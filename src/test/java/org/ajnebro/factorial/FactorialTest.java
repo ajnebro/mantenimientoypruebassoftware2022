@@ -67,6 +67,6 @@ class FactorialTest {
   @Test
   public void shouldComputeOfANegativeNumberRaiseAnException() {
     var factorial = new Factorial() ;
-    assertThrows(RuntimeException.class, () -> factorial.compute(0)) ;
+    assertThrows(RuntimeException.class, () -> factorial.compute(-1)) ;
   }
 }
