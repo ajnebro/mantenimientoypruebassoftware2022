@@ -1,5 +1,11 @@
 package org.ajnebro.factorial;
 
+/**
+ * Class providing a method that computes the factorial of
+ * an integer number
+ *
+ * @author Antonio J. Nebro
+ */
 public class Factorial {
 
   public int compute(int value) {
