@@ -55,6 +55,34 @@ public class DequeNode<T extends Comparable<?>> {
   public boolean isNotATerminalNode() {
     return (!isFirstNode() && !isLastNode());
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    DequeNode<?> dequeNode = (DequeNode<?>) o;
+
+    if (item != null ? !item.equals(dequeNode.item) : dequeNode.item != null) {
+      return false;
+    }
+    if (next != null ? !next.equals(dequeNode.next) : dequeNode.next != null) {
+      return false;
+    }
+    return previous != null ? previous.equals(dequeNode.previous) : dequeNode.previous == null;
+  }
+
+  @Override
+  public int hashCode() {
+    int result = item != null ? item.hashCode() : 0;
+    result = 31 * result + (next != null ? next.hashCode() : 0);
+    result = 31 * result + (previous != null ? previous.hashCode() : 0);
+    return result;
+  }
 }
 
 
